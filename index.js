@@ -1,16 +1,15 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Console } = require('console');
-const generateMarkdown = title => {
-    return `
+const util = require("util")
 
-    `
-}
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const promptUser = () =>
 inquirer
   .prompt([
     {
       type: 'input',
-      message: 'What is the title of your project ?',
+      message: 'What is the title of your project?',
       name: 'title',
     },
     {
@@ -46,15 +45,51 @@ inquirer
       },  
         {
         type: 'input',
-        message: 'List steps requried to view your project',
-        name: 'questions',
+        message: 'What is your GitHub username?',
+        name: 'Git',
+      },
+      {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
       },
   ])
-  .then((response) => {
-      const markdown = generateMarkdown(response)
-      const fileName = `${response.title.split(' ').join('')}.html`
-      fs.writeFile(fileName, data, err => {
-          err ? console.error(err): console.log("Success! Your README.md file has been generated!")
-      })
-  }
- );
+
+const generateMarkdown = (answers) => {
+    return `
+    # Description  
+    ${answers.description}
+    <img src= "https://img.shields.io/badge/License-${answers.license}-">
+    
+    # Table of Contents  
+    * [Installation](#installation)  
+    * [Usage](#usage) 
+    * [License](#license)
+    * [Contributing](#contriuting) 
+    * [Tests](#tests)
+    * [Questions](#questions)
+    
+    # Installation  
+    ${answers.installation}
+    
+    # Usage
+    ${answers.usage}
+    
+    # License  
+    ${answers.license}
+    
+    # Contributing  
+    ${answers.contributing}
+    
+    # Tests  
+    ${answers.tests}
+    
+    # Questions
+    ${answers.Git}, ${answers.email}
+    `
+};
+
+promptUser()
+  .then((answers) => writeFileAsync ("index.md", generateMarkdown(answers)))
+  .then(() => console.log('Successfully wrote to index.md'))
+  .catch((err) => console.error(err));
