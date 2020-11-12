@@ -30,7 +30,7 @@ inquirer
     {
         type: 'list',
         message: 'Choose a license for your project.',
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+        choices: ['MIT', 'Apache 2.0', 'BDS 3.0', 'GLP 3.0', 'None'],
         name: 'license',
       },   
        {
@@ -57,9 +57,10 @@ inquirer
 
 const generateMarkdown = (answers) => {
     return `
+    # ${answers.title}  
     # Description  
     ${answers.description}
-    <img src= "https://img.shields.io/badge/License-${answers.license}-">
+    ![GitHub license](https://img.shields.io/badge/License-${answers.license}-brightgreen)
     
     # Table of Contents  
     * [Installation](#installation)  
@@ -68,14 +69,15 @@ const generateMarkdown = (answers) => {
     * [Contributing](#contriuting) 
     * [Tests](#tests)
     * [Questions](#questions)
-    
     # Installation  
+    ## To use this application, follow these steps:  
     ${answers.installation}
     
     # Usage
     ${answers.usage}
     
     # License  
+    ## This project is licensed by  
     ${answers.license}
     
     # Contributing  
@@ -84,8 +86,11 @@ const generateMarkdown = (answers) => {
     # Tests  
     ${answers.tests}
     
-    # Questions
-    ${answers.Git}, ${answers.email}
+    # Questions  
+    Questions? Contact me here:
+    ${answers.email}  
+    or visit GitHub repo here:  
+    [GitHub](github.com/${answers.Git})
     `
 };
 

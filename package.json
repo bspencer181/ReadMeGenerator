@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^7.3.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bspencer181/ReadMeGenerator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bspencer181/ReadMeGenerator/issues"
+  },
+  "homepage": "https://github.com/bspencer181/ReadMeGenerator#readme"
 }
