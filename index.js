@@ -58,9 +58,9 @@ inquirer
 const generateMarkdown = (answers) => {
     return `
     # ${answers.title}  
+    ![GitHub license](https://img.shields.io/badge/License-${answers.license}-brightgreen)  
     # Description  
-    ${answers.description}
-    ![GitHub license](https://img.shields.io/badge/License-${answers.license}-brightgreen)
+    ${answers.description}  
     
     # Table of Contents  
     * [Installation](#installation)  
@@ -68,23 +68,23 @@ const generateMarkdown = (answers) => {
     * [License](#license)
     * [Contributing](#contriuting) 
     * [Tests](#tests)
-    * [Questions](#questions)
+    * [Questions](#questions)  
     # Installation  
     ## To use this application, follow these steps:  
-    ${answers.installation}
+    ${answers.installation}  
     
     # Usage
-    ${answers.usage}
+    ${answers.usage}  
     
     # License  
     ## This project is licensed by  
-    ${answers.license}
+    ${answers.license}  
     
     # Contributing  
-    ${answers.contributing}
+    ${answers.contributing}  
     
     # Tests  
-    ${answers.tests}
+    ${answers.tests}  
     
     # Questions  
     Questions? Contact me here:
