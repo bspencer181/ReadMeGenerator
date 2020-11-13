@@ -4,18 +4,18 @@
    A simple application that generates a ReadMe.md file based on user input.
     
 # Table of Contents  
-    * Installation  
-    * Usage
-    * Contributing
-    * Tests
-    * Questions
+    * [Installation](#installation)  
+    * [Usage](#usage)
+    * [Contributing](#contributing)
+    * [Tests](#tests)
+    * [Questions](#questions)
 
 # Installation  
 ## To use this application, follow these steps:  
     run "rpm i" in terminal
     
 # Usage
-    https://youtu.be/kkomLpI-uMc  
+    [Demo](https://youtu.be/kkomLpI-uMc)  
     
 # Contributing  
     N/A 
@@ -24,7 +24,4 @@
     N/A 
     
 # Questions  
-    Questions? Contact me here:
-    ${answers.email}  
-    or visit GitHub repo here:  
-    [GitHub](github.com/bspencer181)
+    Visit my GitHub repo [here](github.com/bspencer181)
