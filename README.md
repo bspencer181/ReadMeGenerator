@@ -4,11 +4,11 @@
    A simple application that generates a ReadMe.md file based on user input.
     
 # Table of Contents  
-    * [Installation](#installation)  
-    * [Usage](#usage) 
-    * [Contributing](#contriuting) 
-    * [Tests](#tests)
-    * [Questions](#questions)  
+    * Installation  
+    * Usage
+    * Contributing
+    * Tests
+    * Questions
 
 # Installation  
 ## To use this application, follow these steps:  
@@ -27,4 +27,4 @@
     Questions? Contact me here:
     ${answers.email}  
     or visit GitHub repo here:  
-    [GitHub](github.com/${answers.Git})
+    [GitHub](github.com/bspencer181)
